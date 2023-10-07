@@ -9,7 +9,7 @@ class RouteHelper
  public static function includeRouteFiles(string $folder)
  {
     //iterate thru the v1 folder 
-    $dirIterator = new \RecursiveDirectoryIterator(__DIR__ . '/api/v1'); 
+    $dirIterator = new \RecursiveDirectoryIterator($folder); 
 
     // @var \RecursiveDirectoryIterator | RecursiveIteratorIterator $it
     $it = new \RecursiveIteratorIterator($dirIterator);

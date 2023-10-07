@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    //casting convert the array to json or array
+
+    protected $fillable = [
+        'title', 
+        'body',
+    ];
+    //casting one of its funciton is convert the array to json or array
     protected $casts = [
         'body' => 'array',
     ];

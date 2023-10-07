@@ -31,7 +31,17 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $post = Post::query(); 
+
+        $post->create([
+            'title' => $request->title, 
+            'body' => $request->body
+        ]); 
+
+        return response()->json([
+            'message' => 'success',
+            'data' => $post
+        ]);
     }
 
     /**

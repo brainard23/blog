@@ -20,7 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group([ 'prefix' => 'v1'], function(){
+Route::group(['prefix' => 'v1', 'middleware' => 'auth'], function(){
     Route::get('comments',[\App\Http\Controllers\CommentController::class, 'index']);
     Route::get('posts',[\App\Http\Controllers\PostController::class, 'index']);
+    Route::post('create-post',[\App\Http\Controllers\PostController::class, 'store']);
+
 }); 
+
